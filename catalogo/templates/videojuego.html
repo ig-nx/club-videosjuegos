@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <header class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+        <div class="d-flex align-items-center gap-2">
+          <h1 class="h4 mb-0">{{ videojuego.titulo }}</h1>
+          {% if videojuego.annio == 2026 %}
+          <span class="badge text-bg-warning">VIP</span>
+          {% endif %}
+        </div>
+        <a href="{% url 'videojuegos' %}" class="btn btn-outline-secondary btn-sm">Volver al listado</a>
+      </header>
+
+      <div class="card shadow-sm">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img
+              src="{% static 'img/'|add:videojuego.imagen %}"
+              class="img-fluid h-100 w-100 object-fit-contain bg-white p-3"
+              alt="{{ videojuego.titulo }}"
+            >
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                <span class="badge text-bg-secondary">Año {{ videojuego.annio }}</span>
+                <span class="badge text-bg-dark">Género: {{ videojuego.genero.nombre }}</span>
+              </div>
+              <p class="card-text mb-3">{{ videojuego.descripcion }}</p>
+              {% if videojuego.plataforma.imagen %}
+              <div class="d-inline-flex align-items-center gap-3 border rounded px-3 py-2 bg-light">
+                <img
+                  src="{% static 'img/'|add:videojuego.plataforma.imagen %}"
+                  alt="{{ videojuego.plataforma }}"
+                  width="48"
+                  height="48"
+                  class="bg-white border rounded p-1"
+                >
+                <div>
+                  <div class="text-muted small">Consola</div>
+                  <div class="fw-semibold">{{ videojuego.plataforma }}</div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

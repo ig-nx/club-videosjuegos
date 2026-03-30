@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="container py-4">
+  <header class="mb-4 text-center">
+    <h1 class="h3 mb-1">Listado de Videojuegos</h1>
+    <p class="text-muted mb-0">Explor&aacute; los t&iacute;tulos disponibles</p>
+  </header>
+
+  <div class="row g-4">
+    {% for item in videojuegos %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'img/'|add:item.imagen %}"
+          class="card-img-top product-img"
+          alt="{{ item.titulo }}"
+        >
+        <div class="card-body">
+          <h2 class="h5 card-title mb-2">{{ item.titulo }}</h2>
+          <p class="card-text text-muted mb-0">A&ntilde;o: {{ item.annio }}</p>
+          <p class="card-text text-muted mb-0">G&eacute;nero: {{ item.genero.nombre }}</p>
+          <p class="card-text text-muted mb-0">Consola: {{ item.plataforma }}</p>
+          {% if item.annio == 2026 %}
+          <span class="badge text-bg-warning mt-2">VIP</span>
+          {% endif %}
+        </div>
+
+        <div class="card-footer bg-transparent border-top-0">
+          <a href="{% url 'videojuego' item.id %}" class="btn btn-primary w-100">Ver detalles</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+      <div class="alert alert-secondary text-center mb-0" role="alert">
+        No hay videojuegos disponibles por ahora.
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

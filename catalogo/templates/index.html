@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="container py-5">
+  <div class="row align-items-center g-4">
+    <div class="col-12 col-lg-6">
+      <h1 class="display-6 fw-semibold mb-2">Bienvenid@s al Club VJ</h1>
+      <p class="lead text-muted mb-3">
+        Tu cat&aacute;logo de videojuegos con fichas claras, im&aacute;genes y descripci&oacute;n.
+      </p>
+      <p class="text-muted mb-4">
+        Explor&aacute; t&iacute;tulos por consola y g&eacute;nero para encontrar tu pr&oacute;ximo juego favorito.
+      </p>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="{% url 'videojuegos' %}" class="btn btn-primary">Ver videojuegos</a>
+        <a href="{% url 'register' %}" class="btn btn-outline-secondary">Crear cuenta</a>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="row g-3">
+        <div class="col-12">
+          <div class="platform-card d-flex align-items-center gap-3 p-3 border rounded-3 shadow-sm bg-white floaty floaty-1">
+            <img src="{% static 'img/ps_v3.webp' %}" alt="PlayStation" width="56" height="56" class="bg-white border rounded p-1">
+            <div>
+              <div class="fw-semibold">PlayStation</div>
+              <div class="text-muted small">PS4 / PS5</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="platform-card d-flex align-items-center gap-3 p-3 border rounded-3 shadow-sm bg-white floaty floaty-2">
+            <img src="{% static 'img/xbox_v2.webp' %}" alt="Xbox" width="56" height="56" class="bg-white border rounded p-1">
+            <div>
+              <div class="fw-semibold">Xbox</div>
+              <div class="text-muted small">Series / One</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="platform-card d-flex align-items-center gap-3 p-3 border rounded-3 shadow-sm bg-white floaty floaty-3">
+            <img src="{% static 'img/switch_v2.webp' %}" alt="Nintendo Switch" width="56" height="56" class="bg-white border rounded p-1">
+            <div>
+              <div class="fw-semibold">Nintendo Switch</div>
+              <div class="text-muted small">OLED / Lite</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

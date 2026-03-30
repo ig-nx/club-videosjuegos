@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8 col-xl-7">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h1 class="h4 text-center mb-4">Crear cuenta</h1>
+
+          <form action="{% url 'register' %}" method="post" id="form">
+            {% csrf_token %}
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="first_name" class="form-label">Nombre <span class="text-danger">*</span></label>
+                <input name="first_name" id="first_name" type="text" class="form-control" autocomplete="given-name" required>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="last_name" class="form-label">Apellido <span class="text-danger">*</span></label>
+                <input name="last_name" id="last_name" type="text" class="form-control" autocomplete="family-name" required>
+              </div>
+              <div class="col-12">
+                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                <input name="email" id="email" type="email" class="form-control" autocomplete="email" required>
+                <div class="form-text">El email se usar&aacute; como usuario.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="rut" class="form-label">RUT <span class="text-danger">*</span></label>
+                <input name="rut" id="rut" type="text" class="form-control" required>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="telefono" class="form-label">Tel&eacute;fono <span class="text-danger">*</span></label>
+                <input name="telefono" id="telefono" type="text" class="form-control" required>
+              </div>
+              <div class="col-12">
+                <label for="direccion" class="form-label">Direcci&oacute;n <span class="text-danger">*</span></label>
+                <input name="direccion" id="direccion" type="text" class="form-control" required>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="password1" class="form-label">Contrase&ntilde;a <span class="text-danger">*</span></label>
+                <input name="password1" id="password1" type="password" class="form-control" autocomplete="new-password" required>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="password2" class="form-label">Confirma Contrase&ntilde;a <span class="text-danger">*</span></label>
+                <input name="password2" id="password2" type="password" class="form-control" autocomplete="new-password" required>
+              </div>
+              <div class="col-12 d-grid">
+                <button class="btn btn-secondary btn-lg" type="submit">Registrar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

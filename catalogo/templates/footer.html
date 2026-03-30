@@ -1,0 +1,113 @@
+<style>
+  :root {
+    --footer-bg: #0f1115;
+    --footer-surface: #141923;
+    --footer-text: #cbd5e1;
+    --footer-muted: #8b94a7;
+    --footer-accent: #8dd3ff;
+  }
+
+  .site-footer {
+    background: radial-gradient(1200px 300px at 20% -40%, #1a2233 0%, transparent 60%),
+      var(--footer-bg);
+    color: var(--footer-text);
+    border-top: 1px solid #1f2533;
+    padding: 28px 20px;
+  }
+
+  .site-footer .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer .brand {
+    background: var(--footer-surface);
+    padding: 16px 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+    grid-area: brand;
+  }
+
+  .site-footer .brand-mark {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .site-footer .brand p {
+    margin: 8px 0 0 0;
+    color: var(--footer-muted);
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+
+  .site-footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+    align-items: center;
+    grid-area: links;
+  }
+
+  .site-footer .footer-links a,
+  .site-footer .footer-links span {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .site-footer .footer-links a:hover,
+  .site-footer .footer-links a:focus {
+    color: var(--footer-accent);
+  }
+
+  .site-footer .footer-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    color: var(--footer-muted);
+    font-size: 0.9rem;
+    grid-area: meta;
+  }
+
+  @media (min-width: 720px) {
+    .site-footer .footer-inner {
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        "brand links"
+        "meta meta";
+      align-items: center;
+    }
+
+    .site-footer .footer-meta {
+      justify-content: flex-end;
+      text-align: right;
+    }
+  }
+</style>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="brand">
+      <span class="brand-mark">Club VJ</span>
+      <p>Estilo urbano, piezas seleccionadas y lanzamientos semanales.</p>
+    </div>
+
+    <div class="footer-links">
+      <span>contacto@clubvj.com</span>
+      <span>+56 9 1323 1234</span>
+      <span>Santiago, Chile</span>
+    </div>
+
+    <div class="footer-meta">
+      <span>(c) 2026 Club VJ</span>
+      <span>Todos los derechos reservados.</span>
+    </div>
+  </div>
+</footer>
