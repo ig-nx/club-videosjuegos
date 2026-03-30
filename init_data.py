@@ -1,3 +1,9 @@
+import os
+import django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "club_vj.settings")
+django.setup()
+
 from django.contrib.auth import get_user_model
 from catalogo.models import Videojuego
 
@@ -24,6 +30,6 @@ if Videojuego.objects.count() == 0:
     Videojuego.objects.create(nombre="GTA V", descripcion="Juego de mundo abierto")
     Videojuego.objects.create(nombre="FIFA 24", descripcion="Juego de fútbol")
     Videojuego.objects.create(nombre="Call of Duty", descripcion="Shooter")
-    print("Datos de prueba creados")
+    print("Datos creados")
 else:
-    print("Ya hay videojuegos cargados")
+    print("Ya hay datos")
