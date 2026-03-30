@@ -152,7 +152,7 @@ USE_TZ = True
 # Configuración de archivos estáticos para Render usando WhiteNoise
 STATIC_URL = '/static/'
 # En desarrollo, los archivos estáticos se sirven desde STATICFILES_DIRS.
-# STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 # En producción, se deben servir los archivos estáticos desde STATIC_ROOT.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
