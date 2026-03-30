@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", "clave-local-solo-desarrollo")
 
 # Esto es para desarrollo local. En producción, se debe configurar DEBUG a través de la variable de entorno.
-DEBUG = os.environ.get("DEBUG", "False").strip().lower() in {"1", "true", "yes", "on"}
+DEBUG = os.environ.get("DEBUG", "True").strip().lower() in {"1", "true", "yes", "on"}
 
 # En producción, se debe configurar ALLOWED_HOSTS a través de la variable de entorno.
 ALLOWED_HOSTS = [h.strip() for h in os.environ.get("ALLOWED_HOSTS", "").split(",") if h.strip()]
