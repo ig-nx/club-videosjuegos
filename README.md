@@ -1,6 +1,7 @@
 # Club VJ — Catálogo de Videojuegos
 
 Demo (Render): `https://club-videosjuegos.onrender.com/`
+Esperar unos segundos después del deploy para que el servicio esté activo.
 
 Aplicación web construida con Django para explorar un catálogo de videojuegos, con registro/inicio de sesión y panel de administración.
 
